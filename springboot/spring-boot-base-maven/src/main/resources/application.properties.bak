@@ -1,0 +1,8 @@
+spring.datasource.db1.driverClassName = com.mysql.jdbc.Driver
+spring.datasource.db1.url = jdbc:mysql://hadoop104:3306/test?useUnicode=true&characterEncoding=utf-8
+spring.datasource.db1.username = root
+spring.datasource.db1.password = root
+spring.datasource.db2.driverClassName = com.mysql.jdbc.Driver
+spring.datasource.db2.url = jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+spring.datasource.db2.username = root
+spring.datasource.db2.password = root

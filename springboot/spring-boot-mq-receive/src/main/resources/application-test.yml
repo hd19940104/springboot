@@ -1,0 +1,104 @@
+queue: com.zixue
+server:
+  port: 8082  #端口
+  context-path: /
+  session:
+    timeout: 10
+  tomcat:
+    uri-encoding: UTF-8
+mybatis: #集成mybatis
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.zixue
+  mapper-locations:
+  - classpath:mybatis/mapper/*.xml
+logging:  #集成日志
+  level:
+    com.zixue.mapper: DEBUG
+  config: classpath:log/logging-config.xml
+spring: 
+  thymeleaf:  #集成 thymeleaf 静态页面引擎（freemarker）
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+  resources:
+    static-locations:
+    - classpath:/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    add-mappings: true
+  mvc:
+    static-path-pattern: /**    #集成视图解析器（可配置jsp页面）
+    view:
+      prefix: 
+      suffix: 
+  devtools:  #集成 热加载
+    restart:
+      enabled: true
+      additional-exclude: src/main/java
+      exclude: static/**,public/**,WEB-INF/**
+  datasource:
+    db-one: 
+      type: com.alibaba.druid.pool.DruidDataSource 
+      driverClassName: org.gjt.mm.mysql.Driver
+      url: jdbc:mysql://192.168.1.104:3306/test?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: admin
+    db-two:
+      type: com.alibaba.druid.pool.DruidDataSource  
+      driverClassName: org.gjt.mm.mysql.Driver
+      url: jdbc:mysql://192.168.1.104:3306/test?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: admin
+  redis:   #集成redis
+    database: 3
+    host: 192.168.1.114
+    password: admin
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+  redis-two:   #集成redis-two
+    database: 4
+    host: 192.168.1.114
+    password: admin
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+  jms: 
+    pub-sub-domain: false   # 配置消息的类型，如果是true则表示为topic消息，如果为false表示Queue消息
+  activemq:
+    user: admin    # 连接用户名
+    password: admin   # 连接密码
+    broker-url: tcp://192.168.1.106:61616 # 消息组件的连接主机信息
+  rabbitmq:
+    addresses: rabbitmq-server
+    username: admin
+    password: admin
+    virtual-host: /
+  kafka:
+    bootstrap-servers:
+    - kafka-single:9095
+    template:
+      default-topic: mldn-microboot
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: group-1
+    properties:
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_PLAINTEXT

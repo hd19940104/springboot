@@ -1,0 +1,62 @@
+server:
+  port: 9999  #端口
+  context-path: /zixue
+  session:
+    timeout: 10
+  tomcat:
+    uri-encoding: UTF-8
+mybatis: #集成mybatis
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.zixue
+  mapper-locations:
+  - classpath:mybatis/mapper/*.xml
+logging:  #集成日志
+  level:
+    com.zixue.mapper: DEBUG
+  config: classpath:log/logging-config.xml
+spring: 
+  thymeleaf:  #集成 thymeleaf 静态页面引擎（freemarker）
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+  redis:   #集成redis
+    database: 0
+    host: hadoop103
+    password: admin
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+  resources:
+    static-locations:
+    - classpath:/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+    add-mappings: true
+  mvc:
+    static-path-pattern: /**   #集成视图解析器（可配置jsp页面）
+    view:
+      prefix: 
+      suffix: 
+  devtools:  #集成 热加载
+    restart:
+      enabled: true
+      additional-exclude: src/main/java
+      exclude: static/**,public/**,WEB-INF/**
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: admin
+    

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zixue.mapper.UserRestMapper">
+
+	<insert id="insertUser" parameterType="com.zixue.beans.User">
+		insert into t_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+
+			<if test="name != null">
+				name,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="age != null">
+				age,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				#{name},
+			</if>
+			<if test="password != null">
+				#{password},
+			</if>
+			<if test="age != null">
+				#{age},
+			</if>
+		</trim>
+	</insert>
+	<select id="findUserById" resultType="com.zixue.beans.User">
+		select * from t_user where id = #{id}
+	</select>
+	<select id="findUserAll" resultType="com.zixue.beans.User">
+		select id,name,age,password from t_user
+	</select>
+	<delete id="deleteUser">
+		delete from t_user where id=#{id}
+	</delete>
+	<update id="updateUser" parameterType="com.zixue.beans.User">
+		update t_user
+		<set>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="age != null">
+				age = #{age},
+			</if>
+			<if test="password != null">
+				password = #{password},
+			</if>
+
+		</set>
+		where id = #{id}
+	</update>
+<select id="findUserByName" resultType="com.zixue.beans.User">
+	select * from t_user where name=#{name}
+</select>
+</mapper>
