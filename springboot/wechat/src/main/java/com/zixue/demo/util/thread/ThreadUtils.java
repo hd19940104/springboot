@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
+import java.util.HashMap;
 import java.util.concurrent.*;
 
 /**
@@ -63,7 +64,7 @@ class Demo2 implements Runnable{
 
     @Override
     public void run() {
-
+        HashMap k=null;
     }
 }
 
