@@ -46,7 +46,7 @@ public class MessageInfoRepository {
         record.setToUserName(infoVo.getToUserName());
         record.setUpdater(infoVo.getUpdater());
         record.setUpdateTime(new Date());
-        if (id > 0) {
+        if (Objects.isNull(id) || id > 0) {
             record.setCreateTime(new Date());
             record.setCreator(infoVo.getCreator());
             messageInfoMapper.insertSelective(record);
