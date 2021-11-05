@@ -2,6 +2,7 @@ package com.zixue.demo.repository;
 
 import com.zixue.demo.dao.MessageInfoMapper;
 import com.zixue.demo.dto.model.MessageInfoDto;
+import com.zixue.demo.dto.model.MessageInfoDtoWithBLOBs;
 import com.zixue.demo.dto.vo.MessageInfoVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class MessageInfoRepository {
         }
         Integer id = infoVo.getId();
 
-        MessageInfoDto record = new MessageInfoDto();
+        MessageInfoDtoWithBLOBs record = new MessageInfoDtoWithBLOBs();
         record.setFromUserName(infoVo.getFromUserName());
         record.setMsgId(infoVo.getMsgId());
         record.setMsgType(infoVo.getMsgType());
