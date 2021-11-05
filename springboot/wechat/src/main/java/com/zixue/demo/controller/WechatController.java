@@ -2,8 +2,8 @@ package com.zixue.demo.controller;
 
 
 import com.zixue.demo.service.CoreService;
-import com.zixue.demo.utils.PrintLog;
 import com.zixue.demo.utils.SignUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 @RequestMapping("/wechat")
+@Slf4j
 public class WechatController {
 
     @Autowired
@@ -25,8 +26,6 @@ public class WechatController {
 
     @Autowired
     SignUtil signUtil;
-    @Autowired
-    PrintLog printLog;
 
     @RequestMapping("/detail")
     @ResponseBody
@@ -44,9 +43,9 @@ public class WechatController {
     @ResponseBody
     @GetMapping("/access")
     public String access(String signature,String timestamp,String nonce,String echostr){
-        printLog.log("start..."+signature+"=="+timestamp+"=="+nonce+"=="+echostr);
+        log.info("start..."+signature+"=="+timestamp+"=="+nonce+"=="+echostr);
         Boolean bool=signUtil.checkSignature(signature,timestamp,nonce);
-        printLog.log(bool.toString());
+        log.info(bool.toString());
         if(bool){
             return echostr;
         }

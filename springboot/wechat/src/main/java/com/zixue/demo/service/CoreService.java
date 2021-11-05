@@ -3,15 +3,12 @@ package com.zixue.demo.service;
 import com.zixue.demo.bean.response.TextRespMessage;
 import com.zixue.demo.robot.service.TlRobotService;
 import com.zixue.demo.util.MessageUtils;
-import com.zixue.demo.util.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * @Author: Yun
@@ -20,8 +17,7 @@ import java.util.UUID;
  */
 @Service
 public class CoreService {
-    @Autowired
-    RedisUtil redisUtil;
+
 
     Logger logger=LoggerFactory.getLogger(CoreService.class);
     public String process(HttpServletRequest request){
@@ -43,7 +39,6 @@ public class CoreService {
             // 消息内容
             String info=requestMap.get("Content");
             String msgId=requestMap.get("MsgId");;
-            redisUtil.set(msgId,requestMap);
             // 回复文本消息
             TextRespMessage textMessage = new TextRespMessage();
             textMessage.setToUserName(fromUserName);
