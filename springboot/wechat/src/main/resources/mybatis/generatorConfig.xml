@@ -47,9 +47,9 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="t_reconciliation_config"
-               domainObjectName="ReconciliationDto"
-               mapperName="ReconciliationMapper"
+        <table tableName="t_message_info"
+               domainObjectName="MessageInfoDto"
+               mapperName="MessageInfoMapper"
                enableCountByExample="true"
                enableUpdateByExample="true"
                enableDeleteByExample="false"

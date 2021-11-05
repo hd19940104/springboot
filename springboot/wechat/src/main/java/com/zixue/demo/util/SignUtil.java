@@ -1,4 +1,4 @@
-package com.zixue.demo.utils;
+package com.zixue.demo.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

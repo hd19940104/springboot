@@ -2,7 +2,7 @@ package com.zixue.demo.controller;
 
 
 import com.zixue.demo.service.CoreService;
-import com.zixue.demo.utils.SignUtil;
+import com.zixue.demo.util.SignUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
