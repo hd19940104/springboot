@@ -30,11 +30,16 @@ public class CoreService {
             Map<String, String> requestMap = MessageUtils.parseXml(request);
 
             log.info("接收微信推送消息{}",requestMap.toString());
+            try {
+                TextRespMessage textMessage = messagehandlerService.parseMessage(requestMap);
+                // 将文本消息对象转换成xml
+                respXml = MessageUtils.messageToXml(textMessage);
+            }catch (Exception e){
+                log.error("处理异常",e);
+            }
 
-            TextRespMessage textMessage = messagehandlerService.parseMessage(requestMap);
 
-            // 将文本消息对象转换成xml
-            respXml = MessageUtils.messageToXml(textMessage);
+
             log.info("返回消息{}",respXml);
         } catch (Exception e) {
             e.printStackTrace();

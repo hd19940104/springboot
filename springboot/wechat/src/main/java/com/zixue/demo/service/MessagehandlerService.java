@@ -1,5 +1,6 @@
 package com.zixue.demo.service;
 
+import com.alibaba.fastjson.JSON;
 import com.zixue.demo.bean.response.TextRespMessage;
 import com.zixue.demo.contants.Contants;
 import com.zixue.demo.dto.vo.MessageInfoVo;
@@ -36,16 +37,14 @@ public class MessagehandlerService {
      */
     public TextRespMessage parseMessage(Map<String, String> requestMap) {
         // 默认返回的文本消息内容
-        String respContent = "未知的消息类型！";
+        String respContent = Contants.NO;
         // 发送方帐号
         String fromUserName = requestMap.get("FromUserName");
-        // 开发者微信号
-        String toUserName = requestMap.get("ToUserName");
+
         // 消息类型
         String msgType = requestMap.get("MsgType");
         // 消息内容
         String info = requestMap.get("Content");
-        String msgId = requestMap.get("MsgId");
 
         if ((MessageTypeEnum.REQ_MESSAGE_TYPE_TEXT.name().equals(msgType))) {
             respContent = TlRobotService.getTextResponse(fromUserName, info);
@@ -84,10 +83,10 @@ public class MessagehandlerService {
             else if (MessageEventEnum.EVENT_TYPE_CLICK.name().equals(eventType)) {
                 // TODO 处理菜单点击事件
             }
-        } else {
-            respContent = Contants.NO;
         }
-
+        // 开发者微信号
+        String toUserName = requestMap.get("ToUserName");
+        String msgId = requestMap.get("MsgId");
         // 回复文本消息
         TextRespMessage textMessage = new TextRespMessage();
         textMessage.setToUserName(fromUserName);
@@ -108,6 +107,7 @@ public class MessagehandlerService {
         messageInfoVo.setUpdater(fromUserName);
 
         messageInfoRepository.saveMessageInfo(messageInfoVo);
+        log.info("返回文本内容:{}", JSON.toJSONString(textMessage));
         return textMessage;
     }
 }

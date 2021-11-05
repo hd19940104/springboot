@@ -49,7 +49,7 @@ public class MessageUtils {
         // 遍历所有子节点
         for (Element e : elementList) {
             map.put(e.getName(), e.getText());
-            log.info("========******[" + e.getName() + ":" + e.getText() + "]******========");
+            log.info("[" + e.getName() + ":" + e.getText() + "]");
         }
 
         // 释放资源
