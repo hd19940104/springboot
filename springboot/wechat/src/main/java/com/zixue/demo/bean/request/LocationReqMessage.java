@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.request;
 
 /**
- * @Author: Yun
  * @Description: 请求消息之地理位置消息
- * @Date: Created in 2017-11-29 11:10
  */
 public class LocationReqMessage extends BaseReqMessage {
 

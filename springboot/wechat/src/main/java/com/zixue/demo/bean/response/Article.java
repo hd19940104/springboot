@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.response;
 
 /**
- * @Author: Yun
  * @Description: 图文消息
- * @Date: Created in 2017-11-29 11:38
  */
 public class Article {
     // 图文消息名称

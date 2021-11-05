@@ -19,9 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-29 13:59
  */
 public class MessageUtils {
     // 请求消息类型：文本

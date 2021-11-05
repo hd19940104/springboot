@@ -10,9 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /**
- * @Author: Yun
  * @Description: 检验signature工具类
- * @Date: Created in 2017-11-29 9:49
  */
 @Component
 public class SignUtil {

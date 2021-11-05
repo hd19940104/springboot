@@ -3,9 +3,7 @@ package com.zixue.demo.robot.common;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-30 10:54
  */
 @Component
 public class BaseCommon {

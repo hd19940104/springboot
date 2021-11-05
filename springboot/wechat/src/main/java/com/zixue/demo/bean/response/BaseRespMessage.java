@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.response;
 
 /**
- * @Author: Yun
  * @Description: 响应消息的基类
- * @Date: Created in 2017-11-29 11:22
  */
 public class BaseRespMessage {
     // 接收方帐号（收到的OpenID）

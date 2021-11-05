@@ -2,11 +2,7 @@ package com.zixue.demo.bean.button;
 
 import java.util.List;
 
-/**
- * @Author: Yun
- * @Description:
- * @Date: Created in 2017-11-29 15:32
- */
+
 public class Button {
 
     private String name;//菜单标题

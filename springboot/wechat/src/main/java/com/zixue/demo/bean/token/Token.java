@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.token;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-29 14:50
  */
 public class Token {
     /**

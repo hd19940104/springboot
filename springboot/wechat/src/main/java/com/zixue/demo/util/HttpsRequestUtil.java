@@ -9,9 +9,7 @@ import java.io.*;
 import java.net.URL;
 
 /**
- * @Author: Yun
  * @Description: HTTPS请求工具
- * @Date: Created in 2017-12-26 16:03
  */
 public class HttpsRequestUtil {
 

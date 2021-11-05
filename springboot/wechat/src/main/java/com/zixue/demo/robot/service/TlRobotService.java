@@ -7,9 +7,7 @@ import com.zixue.demo.robot.common.BaseCommon;
 import com.zixue.demo.robot.util.HttpRequestUtil;
 
 /**
- * @Author: Yun
  * @Description: 图灵机器人的服务类
- * @Date: Created in 2017-11-30 10:51
  */
 public class TlRobotService {
 

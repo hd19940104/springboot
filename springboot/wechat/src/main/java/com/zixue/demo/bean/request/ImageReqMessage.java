@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.request;
 
 /**
- * @Author: Yun
  * @Description: 请求消息之图片消息
- * @Date: Created in 2017-11-29 11:06
  */
 public class ImageReqMessage extends BaseReqMessage {
     // 图片链接

@@ -3,9 +3,7 @@ package com.zixue.demo.bean.response;
 import java.util.List;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-29 11:40
  */
 public class ArticleRespMessage extends BaseRespMessage {
     // 图文消息个数，限制为10条以内

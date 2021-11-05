@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.response;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-29 11:31
  */
 public class Music {
     // 音乐标题

@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.event;
 
 /**
- * @Author: Yun
  * @Description: 基础响应事件实体类
- * @Date: Created in 2017-11-29 13:39
  */
 public class BaseEvent {
     // 开发者微信号

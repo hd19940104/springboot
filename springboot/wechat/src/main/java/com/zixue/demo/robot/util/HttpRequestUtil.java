@@ -18,9 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-30 9:49
  */
 public class HttpRequestUtil {
 

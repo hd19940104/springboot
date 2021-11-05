@@ -1,9 +1,7 @@
 package com.zixue.demo.robot.bean.response;
 
 /**
- * @Author: Yun
  * @Description:
- * @Date: Created in 2017-11-30 11:05
  */
 public enum RobotResponTypeEnum {
 

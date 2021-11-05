@@ -1,9 +1,7 @@
 package com.zixue.demo.bean.request;
 
 /**
- * @Author: Yun
  * @Description: 请求消息之文本消息
- * @Date: Created in 2017-11-29 11:03
  */
 public class TextReqMessage extends BaseReqMessage {
 

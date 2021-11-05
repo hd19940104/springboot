@@ -1,9 +1,7 @@
 package com.zixue.demo.robot.bean.response;
 
 /**
- * @Author: Yun
  * @Description: 图灵 基础回复消息实体
- * @Date: Created in 2017-11-30 10:46
  */
 public class BaseRespMessage {
     private String text;
