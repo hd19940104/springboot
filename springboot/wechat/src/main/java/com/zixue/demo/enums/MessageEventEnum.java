@@ -1,5 +1,7 @@
 package com.zixue.demo.enums;
 
+import lombok.Getter;
+
 /**
  * Description:
  * <p>
@@ -9,6 +11,7 @@ package com.zixue.demo.enums;
  * @version 1.0
  * @since JDK 1.8
  */
+@Getter
 public enum MessageEventEnum {
 
     /**

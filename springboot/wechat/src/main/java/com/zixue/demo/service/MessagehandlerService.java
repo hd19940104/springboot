@@ -46,41 +46,41 @@ public class MessagehandlerService {
         // 消息内容
         String info = requestMap.get("Content");
 
-        if ((MessageTypeEnum.REQ_MESSAGE_TYPE_TEXT.name().equals(msgType))) {
+        if ((MessageTypeEnum.REQ_MESSAGE_TYPE_TEXT.getValue().equals(msgType))) {
             respContent = TlRobotService.getTextResponse(fromUserName, info);
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_IMAGE.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_IMAGE.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_IMAGE;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_VOICE.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_VOICE.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_VOICE;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_VIDEO.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_VIDEO.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_VIDEO;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_SHORTVIDEO.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_SHORTVIDEO.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_SHORTVIDEO;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_LOCATION.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_LOCATION.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_LOCATION;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_LINK.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_LINK.getValue().equals(msgType)) {
             respContent = Contants.REQ_MESSAGE_TYPE_LINK;
-        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_EVENT.name().equals(msgType)) {
+        } else if (MessageTypeEnum.REQ_MESSAGE_TYPE_EVENT.getValue().equals(msgType)) {
             // 事件类型
             String eventType = requestMap.get("Event");
             // 关注
-            if (MessageEventEnum.EVENT_TYPE_SUBSCRIBE.name().equals(eventType)) {
+            if (MessageEventEnum.EVENT_TYPE_SUBSCRIBE.getValue().equals(eventType)) {
                 respContent = Contants.EVENT_TYPE_SUBSCRIBE;
             }
             // 取消关注
-            else if (MessageEventEnum.EVENT_TYPE_UNSUBSCRIBE.name().equals(eventType)) {
+            else if (MessageEventEnum.EVENT_TYPE_UNSUBSCRIBE.getValue().equals(eventType)) {
                 // TODO 取消订阅后用户不会再收到公众账号发送的消息，因此不需要回复
             }
             // 扫描带参数二维码
-            else if (MessageEventEnum.EVENT_TYPE_SCAN.name().equals(eventType)) {
+            else if (MessageEventEnum.EVENT_TYPE_SCAN.getValue().equals(eventType)) {
                 // TODO 处理扫描带参数二维码事件
             }
             // 上报地理位置
-            else if (MessageEventEnum.EVENT_TYPE_LOCATION.name().equals(eventType)) {
+            else if (MessageEventEnum.EVENT_TYPE_LOCATION.getValue().equals(eventType)) {
                 // TODO 处理上报地理位置事件
             }
             // 自定义菜单
-            else if (MessageEventEnum.EVENT_TYPE_CLICK.name().equals(eventType)) {
+            else if (MessageEventEnum.EVENT_TYPE_CLICK.getValue().equals(eventType)) {
                 // TODO 处理菜单点击事件
             }
         }
@@ -92,7 +92,7 @@ public class MessagehandlerService {
         textMessage.setToUserName(fromUserName);
         textMessage.setFromUserName(toUserName);
         textMessage.setCreateTime(System.currentTimeMillis());
-        textMessage.setMsgType(MessageResponseEnum.RESP_MESSAGE_TYPE_TEXT.name());
+        textMessage.setMsgType(MessageResponseEnum.RESP_MESSAGE_TYPE_TEXT.getValue());
         textMessage.setContent(respContent);
 
         MessageInfoVo messageInfoVo = new MessageInfoVo();
@@ -110,4 +110,5 @@ public class MessagehandlerService {
         log.info("返回文本内容:{}", JSON.toJSONString(textMessage));
         return textMessage;
     }
+
 }
