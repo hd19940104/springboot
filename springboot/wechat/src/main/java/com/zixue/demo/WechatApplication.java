@@ -20,4 +20,10 @@ public class WechatApplication {
     public String hello() {
         return "hello world";
     }
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String root() {
+        return "hello root";
+    }
 }
